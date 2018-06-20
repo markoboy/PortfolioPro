@@ -11,6 +11,12 @@ body {
 	font: 22px 'Indie Flower', cursive;
 }
 
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
 /** ==============================
  *  Header styles.
  *  =============================*/
@@ -45,10 +51,6 @@ body {
 }
 
 .header_nav_list {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-
 	display: flex;
 	flex-flow: row wrap;
 	align-items: flex-end;
