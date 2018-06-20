@@ -9,6 +9,9 @@ html, body {
 
 body {
 	font: 22px 'Indie Flower', cursive;
+
+	display: flex;
+	flex-direction: column;
 }
 
 ul {
@@ -28,6 +31,8 @@ ul {
 	align-items: flex-end;
 	background: deepskyblue;
 	box-shadow: 2px 4px 12px 2px grey;
+
+	flex-shrink: 0;
 }
 
 .header_logo {
@@ -90,7 +95,7 @@ ul {
 	width: 100%;
 	border-bottom: 2px solid white;
 	transform: scaleX(0);
-	transition: transform 0.3s ease-out;
+	transition: transform 0.25s linear;
 }
 
 .header_nav_item a:hover::after, .header_nav_item a:focus::after {
@@ -103,9 +108,36 @@ ul {
 	padding-left: 28px; /* Make space for the icon */
 
 	font-size: 0;
-	transition: 0.3s ease-out;
+	transition: 0.25s linear;
 }
 
 .header_nav_item a:hover .desc, .header_nav_item a:focus .desc {
 	font-size: 22px;
+}
+
+/** ==============================
+ *  Main container styles.
+ *  =============================*/
+.main_container {
+	position: relative;
+
+	flex-grow: 1;
+	display: flex;
+	overflow-y: auto;
+}
+
+/* Left sidebar navigation */
+.side_nav {
+	width: 25%;
+}
+
+/* Main content styles */
+.main_content {
+	width: 50%;
+	overflow-y: auto;
+}
+
+/* Right sidebar footer */
+.side_footer {
+	width: 25%;
 }

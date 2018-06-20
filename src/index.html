@@ -9,6 +9,7 @@
 	<!-- build:css css/styles.min.css -->
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/simple-scrollbar.css">
 	<!-- endbuild -->
 
 	<!-- Fonts -->
@@ -16,6 +17,8 @@
 
 	<!-- Mobile -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- SimpleScrollbar Library: https://github.com/buzinas/simple-scrollbar -->
+	<script type="text/javascript" src="js/library/simple-scrollbar.js"></script>
 </head>
 <body>
 	<!-- Header container -->
@@ -69,11 +72,13 @@
 			</ul>
 		</aside>
 
-		<!-- Main content -->
-		<section></section>
+		<!-- Main content ss-container to enable custom scrollbar -->
+		<section class="main_content" ss-container>
+		</section>
 
 		<!-- Right sidebar - Footer style with copyrights -->
-		<aside></aside>
+		<aside class="side_footer">
+		</aside>
 	</main>
 
 	<!-- Scripts -->
