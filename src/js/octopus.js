@@ -82,13 +82,16 @@ const octopus = {
 	// Check the url to set the current page.
 	checkPageURL: function() {
 		// Store the URL ID tag to change the page view.
-		let ind = location.href.lastIndexOf('#');
-		let page = location.href.slice(++ind);
+		let hash = location.hash;
 
 		// Check if the ID is a correct value else set the
 		// currentPage to render the home page.
-		if (page === 'projects' || page === 'resume') {
-			model.currentPage = page;
+		if (hash) {
+			let page = hash.replace('#', '');
+
+			if (page === 'projects' || page === 'resume' || page === 'home') {
+				model.currentPage = page;
+			}
 		} else {
 			model.currentPage = 'home';
 		}
