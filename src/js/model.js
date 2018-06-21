@@ -20,7 +20,7 @@ const model = {
 		fullName: 'Athanasios Markou',
 		role    : 'Junior Front-End Developer',
 		summary : 'Personal summary',
-		bioPic  : '',
+		bioPic  : 'img/biopic.png',
 		backPic : ''
 	},
 
@@ -46,10 +46,13 @@ const model = {
 		{
 			name     : '4th Geniko Lykeio (Greek High School)',
 			degree   : 'Apolytirion of Geniko Lykeio',
+			header   : 'Higher secondary education',
 			location : 'Ilion, Greece',
+			locURL   : 'https://www.google.com/maps/place/Ilion,+Greece/@38.0337439,23.6709191,13z/data=!3m1!4b1!4m5!3m4!1s0x14a1a3a80afcf365:0x400bd2ce2b979a0!8m2!3d38.0307786!4d23.7038541',
 			startDate: new Date(2009, 8, 11),
 			endDate  : new Date(2012, 6, 15),
-			type     : 'school'
+			type     : 'school',
+			feedImg  : ['img/book.svg', 'img/graduate.svg'] // Starting feed image, End feed image.
 		}
 	],
 
@@ -58,11 +61,14 @@ const model = {
 		{
 			name     : 'Udacity',
 			course   : 'Front-End Web Developer Nanodegree',
-			url      : 'https://udacity.com',
+			header   : 'Front-End Web Developer Nanodegree',
+			location : 'Udacity, Online',
+			locURL   : 'https://udacity.com',
 			startDate: new Date(2018, 1, 15),
-			endDate  : 'Present',
+			endDate  : new Date(2018, 7, 15, 8),
 			desc     : 'Provide a desc for the course.',
-			type     : 'online'
+			type     : 'online',
+			feedImg  : ['img/book.svg', 'img/certificate.svg']
 		}
 	],
 
@@ -70,12 +76,15 @@ const model = {
 	projects: [
 		{
 			name     : 'Project Name',
+			header   : 'Project\'s header',
 			desc     : 'Project\'s description',
 			startDate: new Date(2018, 5, 1, 3),
 			endDate  : 'Present',
-			url      : 'url.project.com',
+			location : 'GitHub',
+			locURL   : 'url.project.com',
 			img      : '',
-			type     : 'project'
+			type     : 'project',
+			feedImg  : ['img/pencil_rubber.svg', 'img/code_branch.svg']
 		}
 	],
 
@@ -84,10 +93,14 @@ const model = {
 		{
 			name     : 'Company\'s name',
 			role     : 'Work title',
+			header   : 'Work title',
 			startDate: new Date(2017, 3, 25),
 			endDate  : 'Present',
+			location : 'Newcastle upon Tyne',
+			locURL   : 'https://www.google.com/maps/place/Newcastle+upon+Tyne/@55.0022917,-1.7969253,11z/data=!3m1!4b1!4m5!3m4!1s0x487d857e0c6f64cd:0xbe252b072a76191!8m2!3d54.978252!4d-1.61778',
 			desc     : 'Work description and duties.',
-			type     : 'work'
+			type     : 'work',
+			feedImg  : ['img/suitcase.svg', 'img/end_work.svg']
 		}
 	]
 }

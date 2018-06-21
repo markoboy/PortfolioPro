@@ -34,6 +34,7 @@ ul {
 	box-shadow: 2px 4px 12px 2px grey;
 
 	flex-shrink: 0;
+	z-index: 10; /* Stay top of other elements */
 }
 
 .header_logo {
@@ -190,6 +191,13 @@ ul {
 .container a {
 	text-decoration: none;
 	color: #007bff;
+
+	transition: 0.2s ease-out;
+}
+
+.container a:hover {
+	text-decoration: underline;
+	color: #0048FF;
 }
 
 .bio_pic_thumb {
@@ -210,9 +218,13 @@ ul {
 	padding: 1%;
 }
 
-.feeds_date, .feeds_container .location {
+.feeds_date, .feeds_container .location a {
 	color: #666;
-	font-size: 13px;
+	font-size: 14px;
+}
+
+.feeds_container .location a:hover {
+	color: #333;
 }
 
 .feeds_container {
