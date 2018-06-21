@@ -39,7 +39,7 @@ ul {
 .header_logo {
 	text-align: left;
 	flex-grow: 1;
-	margin: 0.7em 1.5em;
+	margin: 0.7em 7.5%;
 }
 
 .header_logo_img {
@@ -120,6 +120,7 @@ ul {
  *  Main container styles.
  *  =============================*/
 .main_container {
+	font: 18px 'Roboto Slab', serif;
 	position: relative;
 	background: rgba(0, 0, 0, 0.08);
 
@@ -157,7 +158,7 @@ ul {
 .side_nav_item a:hover, .side_nav_item a:focus, .side_nav_item .current {
 	background: rgba(255, 255, 255, 0.6);
 	border: 1px solid rgba(0, 0, 255, 0.2);
-	border-radius: 5px;
+	border-radius: 4px;
 	outline: none;
 
 	transition: background 0.25s ease-in;
@@ -167,6 +168,60 @@ ul {
 .main_content {
 	width: 50%;
 	overflow-y: auto;
+}
+
+.container {
+	width: 85%;
+	margin: 4%;
+	padding: 2%;
+	border: 1px solid #aaa;
+	border-radius: 6px;
+	background-color: rgba(255, 255, 255, 0.7);
+
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.container p {
+	margin: 0;
+}
+
+.container a {
+	text-decoration: none;
+	color: #007bff;
+}
+
+.bio_pic_thumb {
+	width: 8%;
+	max-height: 90px;
+	padding: 1%;
+}
+
+.bio_pic_thumb img {
+	max-height: 100%;
+	max-width: 100%;
+	border: 1px solid #ccc;
+	border-radius: 100%;
+}
+
+.feeds_header {
+	width: 88%;
+	padding: 1%;
+}
+
+.feeds_date, .feeds_container .location {
+	color: #666;
+	font-size: 13px;
+}
+
+.feeds_container {
+	width: 100%;
+	text-align: center;
+}
+
+.feeds_container h3 {
+	margin: 0;
 }
 
 /* Right sidebar footer */
