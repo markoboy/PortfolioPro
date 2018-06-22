@@ -127,12 +127,19 @@ const view = {
 				month = dt.getMonth(),
 				year  = dt.getFullYear();
 
-			// Add the date's prefix.
-			let pref;
-			date === 1 ? pref = 'st' :
-				date === 2 ? pref = 'nd' :
-				date === 3 ? pref = 'rd' :
+			// Convert date to string and add the date's prefix.
+			let dateStr = date.toString(),
+				len = dateStr.length - 1,
+				pref;
+
+			if ( date > 3 && date < 14 ) {
 				pref = 'th';
+			} else {
+				dateStr[len] === '1' ? pref = 'st' :
+					dateStr[len] === '2' ? pref = 'nd' :
+					dateStr[len] === '3' ? pref = 'rd' :
+					pref = 'th';
+			}
 
 			// Return the date into string.
 			return `${date}${pref} of ${view.monthName[month]}, ${year}`;
