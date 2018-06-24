@@ -113,8 +113,25 @@ ul {
 	transition: 0.25s linear;
 }
 
-.header_nav_item a:hover .desc, .header_nav_item a:focus .desc {
+.header_nav_item a:hover .desc, .header_nav_item a:focus .desc, .header_nav_item .current .desc {
 	font-size: 22px;
+}
+
+/* Add an arrow of the buttom to the current page button */
+.header_nav_item .current {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.header_nav_item .current::after {
+	width: 0;
+	transform: scaleX(1);
+
+	content: ' ';
+	position: absolute;
+	top: 0;
+	left: 45%;
+	border: 8px solid;
+	border-color: transparent transparent white transparent;
 }
 
 /** ==============================
