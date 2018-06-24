@@ -11,16 +11,57 @@
 const view = {
 	// Initialize the view.
 	init: function() {
+		// Get the current page.
+		this.currentPage = octopus.getCurrentPage();
+
 		// Store month names to be used for date stringify.
 		this.monthName = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
+		// Store the header nav element to add event listener for the menu.
+		this.headerNav = document.querySelector('.header_nav');
+
 		// Initialize the current page.
-		this[octopus.getCurrentPage()].init();
+		this[this.currentPage].init();
+		this.render();
 	},
 
 	// Render the page.
 	render() {
+		// Add a current class style to the current page link.
+		let currentHeaderLink = document.querySelector(`a[href="#${this.currentPage}"]`);
+		currentHeaderLink.classList.add('current');
 
+		// Add an event listener to header nav to change the current page.
+		this.headerNav.addEventListener('click', function(e) {
+			// Get the clicked element and its parent.
+			let target = e.target,
+				parent = e.target.parentElement;
+
+			// Check if the clicked element or its parent are a link.
+			if (target.nodeName === 'A' || parent.nodeName === 'A') {
+				if (target.nodeName === 'A' && !target.classList.contains('current')) {
+					// Remove the current class styles from the previous link.
+					currentHeaderLink.classList.remove('current');
+
+					// Set the current class styles to the clicked element.
+					target.classList.add('current');
+					currentHeaderLink = target;
+
+					view.currentPage = target.hash.replace('#', '');
+					octopus.changeCurrentPage(view.currentPage);
+				} else if (parent.nodeName === 'A' && !parent.classList.contains('current')) {
+					// Remove the current class styles from the previous link.
+					currentHeaderLink.classList.remove('current');
+
+					// Set the current class styles to the clicked element.
+					parent.classList.add('current');
+					currentHeaderLink = parent;
+
+					view.currentPage = parent.hash.replace('#', '');
+					octopus.changeCurrentPage(view.currentPage);
+				}
+			}
+		});
 	},
 
 	// Create the home view object.

@@ -75,8 +75,6 @@ const octopus = {
 	// Change the current page to render.
 	changeCurrentPage: function(page) {
 		model.currentPage = page;
-
-		view.render();
 	},
 
 	// Check the url to set the current page.
@@ -91,6 +89,8 @@ const octopus = {
 
 			if (page === 'projects' || page === 'resume' || page === 'home') {
 				model.currentPage = page;
+			} else {
+				model.currentPage = 'home';
 			}
 		} else {
 			model.currentPage = 'home';
